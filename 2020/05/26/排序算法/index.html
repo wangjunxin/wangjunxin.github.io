@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>排序算法 - wangjunxin</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="算法Created By: junxin wangLast Edited: May 18, 2020 5:57 PM
+冒泡算法  时间复杂度： O(n^2)比较相邻的元素。如果第一个比第二个大，就交,"> 
+    <meta name="author" content="wangjunxin"> 
+    <link rel="alternative" href="atom.xml" title="wangjunxin" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin="">
+    <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_xjbfxy4nzcj.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">wangjunxin</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a id="home-icon" class="image-icon icon-home iconfont animated fadeIn" href="javascript:;" target="_blank" rel="noopener" data-url="http://wangjunxin.wang"></a>
+    <div id="play-icon" title="Play/Pause" class="iconfont icon-play animated fadeIn"></div>
+    <h3 class="subtitle">排序算法</h3>
+    <div class="social">
+<!--        <div class="like-icon">-->
+<!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+<!--        </div>-->
+        <div>
+            <div class="share animated fadeIn">
+                
+                    <a href="javascript:;" target="_blank" rel="noopener" class="iconfont icon-share1"></a>
+                    <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class= article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                    <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>Article<b> 」</b></a>
+                
+                May 26, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/05/26/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="排序算法" class="">排序算法</a></h3>
+            
+                <p class="post-count animated fadeInDown">
+                    
+                        <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        40k
+                    </span>
+                    
+                    
+                        <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        36 mins.
+                    </span>
+                    
+                    
+                    
+                        <span id="busuanzi_container_page_pv">
+                            <b class="iconfont icon-read"></b> <i>Read count</i>
+                            <span id="busuanzi_value_page_pv">0</span>
+                        </span>
+                    
+                </p>
+            
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn slower">
+            <h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p>Created By: junxin wang<br>Last Edited: May 18, 2020 5:57 PM</p>
+<h3 id="冒泡算法-时间复杂度：-O-n-2"><a href="#冒泡算法-时间复杂度：-O-n-2" class="headerlink" title="冒泡算法  时间复杂度： O(n^2)"></a>冒泡算法  时间复杂度： O(n^2)</h3><p>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</p>
+<p>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</p>
+<p>针对所有的元素重复以上的步骤，除了最后一个。</p>
+<p>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> len = arr.length;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; len - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;        <span class="comment">// 相邻元素两两对比</span></span><br><span class="line">                <span class="keyword">var</span> temp = arr[j+<span class="number">1</span>];        <span class="comment">// 元素交换</span></span><br><span class="line">                arr[j+<span class="number">1</span>] = arr[j];</span><br><span class="line">                arr[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>改进冒泡算法，在每趟排序中进行正向和反向两遍冒泡的方法一次可以得到两个最终值(最大者和最小者)</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort3</span>(<span class="params">arr3</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> low = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> high = arr.length - <span class="number">1</span>; <span class="comment">//设置变量的初始值</span></span><br><span class="line">    <span class="keyword">var</span> tmp, j;</span><br><span class="line">    <span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = low; j &lt; high; ++j) <span class="comment">//正向冒泡,找到最大者</span></span><br><span class="line">            <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                tmp = arr[j];</span><br><span class="line">                arr[j] = arr[j + <span class="number">1</span>];</span><br><span class="line">                arr[j + <span class="number">1</span>] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">            -- high; <span class="comment">//修改high值, 前移一位</span></span><br><span class="line">        <span class="keyword">for</span> (j = high; j &gt; low; --j) <span class="comment">//反向冒泡,找到最小者</span></span><br><span class="line">            <span class="keyword">if</span> (arr[j] &lt; arr[j - <span class="number">1</span>]) &#123;</span><br><span class="line">                tmp = arr[j];</span><br><span class="line">                arr[j] = arr[j - <span class="number">1</span>];</span><br><span class="line">                arr[j - <span class="number">1</span>] = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">            ++ low; <span class="comment">//修改low值,后移一位</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr3;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="选择算法-O-n-2"><a href="#选择算法-O-n-2" class="headerlink" title="选择算法 O(n^2)"></a>选择算法 O(n^2)</h3><ul>
+<li>在未排序序列中找到最小（大）元素，存放到排序序列的起始位置</li>
+<li>从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。</li>
+<li>重复第二步，直到所有元素均排序完毕。</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectionSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> len = arr.length;</span><br><span class="line">    <span class="keyword">var</span> minIndex, temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        minIndex = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j] &lt; arr[minIndex]) &#123;     <span class="comment">// 寻找最小的数</span></span><br><span class="line">                minIndex = j;                 <span class="comment">// 将最小数的索引保存</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        temp = arr[i];</span><br><span class="line">        arr[i] = arr[minIndex];</span><br><span class="line">        arr[minIndex] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><ul>
+<li>从第一个元素开始，该元素可以认为已经被排序</li>
+<li>取出下一个元素，在已经排序的元素序列中从后向前扫描；</li>
+<li>如果该元素（已排序）大于新元素，将该元素移到下一位置；</li>
+<li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；</li>
+<li>将新元素插入到该位置后；重复2~5</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertionSort</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(array).slice(<span class="number">8</span>, <span class="number">-1</span>) === <span class="string">'Array'</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.time(<span class="string">'插入排序耗时：'</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">            <span class="keyword">var</span> key = array[i];</span><br><span class="line">            <span class="keyword">var</span> j = i - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; array[j] &gt; key) &#123;</span><br><span class="line">                array[j + <span class="number">1</span>] = array[j];</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">            array[j + <span class="number">1</span>] = key;</span><br><span class="line">            <span class="built_in">console</span>.log(array)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.timeEnd(<span class="string">'插入排序耗时：'</span>);</span><br><span class="line">        <span class="keyword">return</span> array;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结合二分法</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">binaryInsertionSort</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.time(<span class="string">'二分插入排序耗时：'</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> key = array[i],</span><br><span class="line">            left = <span class="number">0</span>,</span><br><span class="line">            right = i - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">            <span class="keyword">var</span> middle = <span class="built_in">parseInt</span>((left + right) / <span class="number">2</span>);</span><br><span class="line">            <span class="keyword">if</span> (key &lt; array[middle]) &#123;</span><br><span class="line">                right = middle - <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                left = middle + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = i - <span class="number">1</span>; j &gt;= left; j--) &#123;</span><br><span class="line">            array[j + <span class="number">1</span>] = array[j];</span><br><span class="line">        &#125;</span><br><span class="line">        array[left] = key;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.timeEnd(<span class="string">'二分插入排序耗时：'</span>);</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="希尔排序-O-nlog-n"><a href="#希尔排序-O-nlog-n" class="headerlink" title="希尔排序 O(nlog n)"></a>希尔排序 O(nlog n)</h3><p>希尔排序是将待排序的数组元素 按下标的一定增量分组 ，分成多个子序列，然后对各个子序列进行直接插入排序算法排序；然后依次缩减增量再进行排序，直到增量为1时，进行最后一次直接插入排序，排序结束。</p>
+<p>*<em>增量d 的范围： *</em>1&lt;= d &lt; 待排序数组的长度 （d 需为 int 值）<br>*<em>增量的取值： *</em>一般的初次取序列（数组）的一半为增量，以后每次减半，直到增量为1。<br>第一个增量=数组的长度/2,<br>第二个增量= 第一个增量/2,<br>第三个增量=第二个增量/2,<br>以此类推，最后一个增量=1。</p>
+<p><img src="/images/Untitled.png" alt="/images/Untitled.png"></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shellSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> len = arr.length,</span><br><span class="line">        temp,</span><br><span class="line">        gap = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">console</span>.time(<span class="string">'希尔排序耗时:'</span>);</span><br><span class="line">    <span class="keyword">while</span> (gap &lt; len / <span class="number">5</span>) &#123; <span class="comment">//动态定义间隔序列</span></span><br><span class="line">        gap = gap * <span class="number">5</span> + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (gap; gap &gt; <span class="number">0</span>; gap = <span class="built_in">Math</span>.floor(gap / <span class="number">5</span>)) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = gap; i &lt; len; i++) &#123;</span><br><span class="line">            temp = arr[i];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> j = i - gap; j &gt;= <span class="number">0</span> &amp;&amp; arr[j] &gt; temp; j -= gap) &#123;</span><br><span class="line">                arr[j + gap] = arr[j];</span><br><span class="line">            &#125;</span><br><span class="line">            arr[j + gap] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.timeEnd(<span class="string">'希尔排序耗时:'</span>);</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="归并排序-T-n-O-nlogn"><a href="#归并排序-T-n-O-nlogn" class="headerlink" title="归并排序 T(n) = O(nlogn)"></a>归并排序 T(n) = O(nlogn)</h3><p><img src="/images/Untitled%201.png" alt="/images/Untitled%201.png"></p>
+<p><img src="/images/Untitled%202.png" alt="/images/Untitled%202.png"></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergeSort</span>(<span class="params">arr</span>) </span>&#123; <span class="comment">//采用自上而下的递归方法</span></span><br><span class="line">    <span class="keyword">var</span> len = arr.length;</span><br><span class="line">    <span class="keyword">if</span> (len &lt; <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> middle = <span class="built_in">Math</span>.floor(len / <span class="number">2</span>),</span><br><span class="line">        left = arr.slice(<span class="number">0</span>, middle),</span><br><span class="line">        right = arr.slice(middle);</span><br><span class="line">    <span class="keyword">return</span> merge(mergeSort(left), mergeSort(right));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">merge</span>(<span class="params">left, right</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = [];</span><br><span class="line">    <span class="built_in">console</span>.time(<span class="string">'归并排序耗时'</span>);</span><br><span class="line">    <span class="keyword">while</span> (left.length &amp;&amp; right.length) &#123;</span><br><span class="line">        <span class="keyword">if</span> (left[<span class="number">0</span>] &lt;= right[<span class="number">0</span>]) &#123;</span><br><span class="line">            result.push(left.shift());</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            result.push(right.shift());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (left.length)</span><br><span class="line">        result.push(left.shift());</span><br><span class="line">    <span class="keyword">while</span> (right.length)</span><br><span class="line">        result.push(right.shift());</span><br><span class="line">    <span class="built_in">console</span>.timeEnd(<span class="string">'归并排序耗时'</span>);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="快速排序-T-n-O-nlogn"><a href="#快速排序-T-n-O-nlogn" class="headerlink" title="快速排序 T(n) = O(nlogn)"></a>快速排序 T(n) = O(nlogn)</h3><p>在数据集之中，选择一个元素作为”基准”（pivot）。</p>
+<p>所有小于”基准”的元素，都移到”基准”的左边；所有大于”基准”的元素，都移到”基准”的右边。</p>
+<p>对”基准”左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">　　<span class="keyword">if</span> (arr.length &lt;= <span class="number">1</span>) &#123; <span class="keyword">return</span> arr; &#125;</span><br><span class="line">　　<span class="keyword">var</span> pivotIndex = <span class="built_in">Math</span>.floor(arr.length / <span class="number">2</span>);</span><br><span class="line">　　<span class="keyword">var</span> pivot = arr.splice(pivotIndex, <span class="number">1</span>)[<span class="number">0</span>];</span><br><span class="line">　　<span class="keyword">var</span> left = [];</span><br><span class="line">　　<span class="keyword">var</span> right = [];</span><br><span class="line">　　<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">　　　　<span class="keyword">if</span> (arr[i] &lt; pivot) &#123;</span><br><span class="line">　　　　　　left.push(arr[i]);</span><br><span class="line">　　　　&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">　　　　　　right.push(arr[i]);</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="keyword">return</span> quickSort(left).concat([pivot], quickSort(right));</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="堆排序-O-nlogn"><a href="#堆排序-O-nlogn" class="headerlink" title="堆排序 O(nlogn)"></a>堆排序 O(nlogn)</h3><ul>
+<li>堆是一个完全二叉树。</li>
+<li>完全二叉树： 二叉树除开最后一层，其他层结点数都达到最大，最后一层的所有结点都集中在左边（左边结点排列满的情况下，右边才能缺失结点）。</li>
+<li>大顶堆：根结点为最大值，每个结点的值大于或等于其孩子结点的值。</li>
+<li>小顶堆：根结点为最小值，每个结点的值小于或等于其孩子结点的值。</li>
+</ul>
+<ol>
+<li>将初始二叉树转化为大顶堆（heapify）（实质是从第一个非叶子结点开始，从下至上，从右至左，对每一个非叶子结点做shiftDown操作），此时根结点为最大值，将其与最后一个结点交换。</li>
+<li>除开最后一个结点，将其余节点组成的新堆转化为大顶堆（实质上是对根节点做shiftDown操作），此时根结点为次最大值，将其与最后一个结点交换。</li>
+<li>重复步骤2，直到堆中元素个数为1（或其对应数组的长度为1），排序完成。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 交换两个节点</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap</span>(<span class="params">A, i, j</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> temp = A[i];</span><br><span class="line">  A[i] = A[j];</span><br><span class="line">  A[j] = temp; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将 i 结点以下的堆整理为大顶堆，注意这一步实现的基础实际上是：</span></span><br><span class="line"><span class="comment">// 假设 结点 i 以下的子堆已经是一个大顶堆，shiftDown函数实现的</span></span><br><span class="line"><span class="comment">// 功能是实际上是：找到 结点 i 在包括结点 i 的堆中的正确位置。后面</span></span><br><span class="line"><span class="comment">// 将写一个 for 循环，从第一个非叶子结点开始，对每一个非叶子结点</span></span><br><span class="line"><span class="comment">// 都执行 shiftDown操作，所以就满足了结点 i 以下的子堆已经是一大</span></span><br><span class="line"><span class="comment">//顶堆</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shiftDown</span>(<span class="params">A, i, length</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> temp = A[i]; <span class="comment">// 当前父节点</span></span><br><span class="line"><span class="comment">// j&lt;length 的目的是对结点 i 以下的结点全部做顺序调整</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">2</span>*i+<span class="number">1</span>; j&lt;length; j = <span class="number">2</span>*j+<span class="number">1</span>) &#123;</span><br><span class="line">    temp = A[i];  <span class="comment">// 将 A[i] 取出，整个过程相当于找到 A[i] 应处于的位置</span></span><br><span class="line">    <span class="keyword">if</span>(j+<span class="number">1</span> &lt; length &amp;&amp; A[j] &lt; A[j+<span class="number">1</span>]) &#123; </span><br><span class="line">      j++;   <span class="comment">// 找到两个孩子中较大的一个，再与父节点比较</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(temp &lt; A[j]) &#123;</span><br><span class="line">      swap(A, i, j) <span class="comment">// 如果父节点小于子节点:交换；否则跳出</span></span><br><span class="line">      i = j;  <span class="comment">// 交换后，temp 的下标变为 j</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 堆排序</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">heapSort</span>(<span class="params">A</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 初始化大顶堆，从第一个非叶子结点开始</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="built_in">Math</span>.floor(A.length/<span class="number">2</span><span class="number">-1</span>); i&gt;=<span class="number">0</span>; i--) &#123;</span><br><span class="line">    shiftDown(A, i, A.length);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 排序，每一次for循环找出一个当前最大值，数组长度减一</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="built_in">Math</span>.floor(A.length<span class="number">-1</span>); i&gt;<span class="number">0</span>; i--) &#123;</span><br><span class="line">    swap(A, <span class="number">0</span>, i); <span class="comment">// 根节点与最后一个节点交换</span></span><br><span class="line">    shiftDown(A, <span class="number">0</span>, i); <span class="comment">// 从根节点开始调整，并且最后一个结点已经为当</span></span><br><span class="line">                         <span class="comment">// 前最大值，不需要再参与比较，所以第三个参数</span></span><br><span class="line">                         <span class="comment">// 为 i，即比较到最后一个结点前一个即可</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="计数排序-O-n-k"><a href="#计数排序-O-n-k" class="headerlink" title="计数排序 O(n+k)"></a>计数排序 O(n+k)</h3><p>计数排序使用一个额外的数组C，其中第i个元素是待排序数组A中值等于i的元素的个数。然后根据数组C来将A中的元素排到正确的位置。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countSort</span>(<span class="params">ary</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> newAry = <span class="keyword">new</span> <span class="built_in">Array</span>(ary.length).fill(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> value <span class="keyword">of</span> ary) &#123;</span><br><span class="line">            newAry[value]++;</span><br><span class="line">        &#125;</span><br><span class="line">        ary = [];</span><br><span class="line">        <span class="comment">// 给ary重新赋值</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>; i&lt;newAry.length; i++) &#123;</span><br><span class="line">            <span class="comment">// 循环数字次数</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> k = newAry[i]; k&gt;<span class="number">0</span>; k--) &#123;</span><br><span class="line">                ary.push(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        newAry = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">return</span> ary;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h3><ol>
+<li>计算并设置固定数量的空桶</li>
+<li>将数据放入对应的桶中</li>
+<li>对桶中的数据进行排序</li>
+<li>把每个桶的数据进行合并</li>
+</ol>
+<p>已知需要排序的元素集合为 [ 29, 25, 3, 49, 9, 37, 21, 43] , 桶的数量K设置为5, 每个桶的区间跨度S设置为10</p>
+<p><img src="/images/Untitled%203.png" alt="/images/Untitled%203.png"></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertion_sort</span>(<span class="params">A</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>; i&lt;A.length; i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> p = i<span class="number">-1</span></span><br><span class="line">        <span class="keyword">const</span> x = A[i]</span><br><span class="line">        <span class="keyword">while</span>(p&gt;=<span class="number">0</span> &amp;&amp; A[p]&gt;x)&#123;</span><br><span class="line">            A[p+<span class="number">1</span>] = A[p]</span><br><span class="line">            p--</span><br><span class="line">        &#125;</span><br><span class="line">        A[p+<span class="number">1</span>] = x</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//桶排序</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bucket_sort</span>(<span class="params">A, k, s</span>)</span>&#123; <span class="comment">//A排序数组,k桶子数量,s桶子空间尺度</span></span><br><span class="line">    <span class="keyword">const</span> buckets = <span class="built_in">Array</span>.from(&#123;<span class="attr">length</span>:k&#125;, ()=&gt;[]) <span class="comment">//创建桶子</span></span><br><span class="line">    <span class="comment">//把元素放入对应桶子</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;A.length; i++)&#123;</span><br><span class="line">        <span class="comment">//计算需要放入桶子序号</span></span><br><span class="line">        <span class="keyword">const</span> idx = ~~(A[i]/s) </span><br><span class="line">        buckets[idx].push(A[i])</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//对每个桶子进行排序</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;buckets.length; i++)&#123;</span><br><span class="line">        <span class="comment">//此处选取插入排序, 空间消耗少,元素少常数时间消耗短</span></span><br><span class="line">        insertion_sort(buckets[i])</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//把每个桶子数据合并</span></span><br><span class="line">    <span class="keyword">return</span> [].concat(...buckets)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><ul>
+<li>取得数组中的最大值以及位数</li>
+<li>arr为原始数组，从最低位开始取每个位组成radix数组</li>
+<li>对radix进行计数排序（利用计数排序适用于小范围数的特点）</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">RadixLSDSort</span> (<span class="params">arr, digit</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> radix = <span class="number">10</span>;   <span class="comment">// 基数,以10进制来进行排序</span></span><br><span class="line">    <span class="keyword">var</span> i = <span class="number">0</span>, </span><br><span class="line">        j = <span class="number">0</span>,</span><br><span class="line">        count = <span class="built_in">Array</span>(radix), <span class="comment">// 0~9的桶</span></span><br><span class="line">        len = arr.length,</span><br><span class="line">        bucket = <span class="built_in">Array</span>(len);</span><br><span class="line">    <span class="comment">// 利用LSD,也就是次位优先</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> d = <span class="number">0</span>; d &lt; digit; d++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; radix; i++) &#123;</span><br><span class="line">            count[i] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 向各个桶中添加元素,并统计出每个桶中装的个数</span></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            j = getDigit(arr[i], d);</span><br><span class="line">            count[j]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// count的越往后值最大,最大值为arr.length</span></span><br><span class="line">        <span class="comment">// count数组的值为,该位数值为该索引的数字总数</span></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; radix; i++) &#123;</span><br><span class="line">            count[i] = count[i] + count[i - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 按照桶的顺序将导入temp中</span></span><br><span class="line">        <span class="keyword">for</span> (i = len - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            j = getDigit(arr[i], d);</span><br><span class="line">            bucket[count[j] - <span class="number">1</span>] = arr[i];</span><br><span class="line">            count[j]--; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 将已经根据相应位数排好的序列导回arr中</span></span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            arr[i] = bucket[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/Untitled%204.png" alt="/images/Untitled%204.png"></p>
+<h3 id="算法对比"><a href="#算法对比" class="headerlink" title="算法对比"></a>算法对比</h3><p><img src="/images/Untitled%205.png" alt="/images/Untitled%205.png"></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='/statics/chengdu.mp3'></li>
+                        
+                    
+                </ul>
+            
+            
+                
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='ec894e2b66f752e8b7fb'
+        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-r='blog-comments'
+        data-o='TriDiamond'
+        data-a='TriDiamond'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1571154379/TriDiamondLogoCircleLighting_llbad2.png" height=300 width=300></img>
+                    <p>wangjunxin</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/wangjunxin" target="_blank"><span class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="" target="_blank"><span class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="" target="_blank"><span class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">4 <p>Articles</p></a></li>
+                    <li><a href="/categories">0 <p>Categories</p></a></li>
+                    <li><a href="/tags">0 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+                
+                
+                    <div class="box sticky animated fadeInRight faster">
+                        <div id="toc" class="subbox">
+                            <h4>Contents</h4>
+                            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#算法"><span class="toc-number">1.</span> <span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#冒泡算法-时间复杂度：-O-n-2"><span class="toc-number">1.0.1.</span> <span class="toc-text">冒泡算法  时间复杂度： O(n^2)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选择算法-O-n-2"><span class="toc-number">1.0.2.</span> <span class="toc-text">选择算法 O(n^2)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插入排序"><span class="toc-number">1.0.3.</span> <span class="toc-text">插入排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#希尔排序-O-nlog-n"><span class="toc-number">1.0.4.</span> <span class="toc-text">希尔排序 O(nlog n)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#归并排序-T-n-O-nlogn"><span class="toc-number">1.0.5.</span> <span class="toc-text">归并排序 T(n) = O(nlogn)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快速排序-T-n-O-nlogn"><span class="toc-number">1.0.6.</span> <span class="toc-text">快速排序 T(n) = O(nlogn)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#堆排序-O-nlogn"><span class="toc-number">1.0.7.</span> <span class="toc-text">堆排序 O(nlogn)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计数排序-O-n-k"><span class="toc-number">1.0.8.</span> <span class="toc-text">计数排序 O(n+k)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#桶排序"><span class="toc-number">1.0.9.</span> <span class="toc-text">桶排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基数排序"><span class="toc-number">1.0.10.</span> <span class="toc-text">基数排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法对比"><span class="toc-number">1.0.11.</span> <span class="toc-text">算法对比</span></a></li></ol></li></ol></li></ol>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    </div>
+</div>
+
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            wangjunxin
+        </span>
+    </p>
+</footer>
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script src="//cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+</html>
