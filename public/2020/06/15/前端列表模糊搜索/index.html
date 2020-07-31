@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>前端模糊搜索 - wangjunxin</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="wangjunxin,"> 
+    <meta name="description" content="前端城市列表模糊搜索Created By: junxin wangLast Edited: Jun 15, 2020 9:16 PMTags: ideas
+起因前两天刷知乎看到一个阿里的面试题，说是,"> 
+    <meta name="author" content="wangjunxin"> 
+    <link rel="alternative" href="atom.xml" title="wangjunxin" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin="">
+    <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_xjbfxy4nzcj.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+    <link rel="stylesheet" href="/css/obsidian.css">
+    <link rel="stylesheet" href="/css/ball-atom.min.css">
+</head>
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">wangjunxin</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a id="home-icon" class="image-icon icon-home iconfont animated fadeIn" href="javascript:;" target="_blank" rel="noopener" data-url="http://wangjunxin.github.io"></a>
+    <div id="play-icon" title="Play/Pause" class="iconfont icon-play animated fadeIn"></div>
+    <h3 class="subtitle">前端模糊搜索</h3>
+    <div class="social">
+<!--        <div class="like-icon">-->
+<!--            <a href="javascript:;" target="_blank" rel="noopener" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+<!--        </div>-->
+        <div>
+            <div class="share animated fadeIn">
+                
+                    <a href="javascript:;" target="_blank" rel="noopener" class="iconfont icon-share1"></a>
+                    <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class= article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                    <a href="javascript:;" target="_blank" rel="noopener"><b>「 </b>Article<b> 」</b></a>
+                
+                June 15, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/06/15/%E5%89%8D%E7%AB%AF%E5%88%97%E8%A1%A8%E6%A8%A1%E7%B3%8A%E6%90%9C%E7%B4%A2/" title="前端模糊搜索" class="">前端模糊搜索</a></h3>
+            
+                <p class="post-count animated fadeInDown">
+                    
+                        <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        13k
+                    </span>
+                    
+                    
+                        <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        12 mins.
+                    </span>
+                    
+                    
+                    
+                        <span id="busuanzi_container_page_pv">
+                            <b class="iconfont icon-read"></b> <i>Read count</i>
+                            <span id="busuanzi_value_page_pv">0</span>
+                        </span>
+                    
+                </p>
+            
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn slower">
+            <h1 id="前端城市列表模糊搜索"><a href="#前端城市列表模糊搜索" class="headerlink" title="前端城市列表模糊搜索"></a>前端城市列表模糊搜索</h1><p>Created By: junxin wang<br>Last Edited: Jun 15, 2020 9:16 PM<br>Tags: ideas</p>
+<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>前两天刷知乎看到一个阿里的面试题，说是城市列表的模糊搜索，例如a州能搜索到杭州</p>
+<p>现有城市列表 [‘杭州’, ‘上海’, ‘衢州’, ‘三亚’]<br>输入 a州<br>输出结果：杭州</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>首先输入a州能匹配到杭州，也就是搜索需要支持拼音，其次a并不是杭字的首字母，所以需要对每个字符进行精确到单拼音的字节切分</li>
+<li>针对之后需要切分搜索关键字来取得对应的结果，采用对象来存储数据（方便提取）</li>
+<li>根据搜索关键字获取的数据后需要进行交集操作，所以以原数组的index作为城市的id，这样方便之后的交集操作</li>
+<li>根据搜索关键字获得最后交集后，根据结果的index数组返回城市列表</li>
+<li>返回结果还需要与关键字进行顺序匹配，筛除顺序不一致数据（TO DO）</li>
+</ul>
+<h3 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h3><p>目前还没完善搜索关键字顺序造成的搜索结果问题，例如a州与州a的搜索结果一致，在州a的搜索结果中需要剔除例如杭州这类数据。（TO DO）</p>
+<h3 id="生成字符表"><a href="#生成字符表" class="headerlink" title="生成字符表"></a>生成字符表</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> pinyin = <span class="built_in">require</span>(<span class="string">"pinyin"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> cnMap = &#123;&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">fuzzySearch</span> </span>&#123;</span><br><span class="line">	formateCNMap(list) &#123;</span><br><span class="line">    sourceLsit = list</span><br><span class="line">    list.forEach(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> item) &#123;</span><br><span class="line">        <span class="keyword">this</span>.formateMapforCN(i, index)</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.isCN(i)) &#123;</span><br><span class="line">          <span class="keyword">this</span>.dismantleCN(i, index)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="built_in">console</span>.log(cnMap)</span><br><span class="line">  &#125;</span><br><span class="line">	<span class="comment">// 检验输入是否为中文</span></span><br><span class="line">  isCN(item) &#123;</span><br><span class="line">    <span class="keyword">const</span> cn = <span class="regexp">/[\u4e00-\u9fa5]/</span></span><br><span class="line">    <span class="keyword">return</span> cn.test(item)</span><br><span class="line">  &#125;</span><br><span class="line">	<span class="comment">// 将中文转为拼音，然后根据拼音单字节放入表中，push的数据为数组的index</span></span><br><span class="line">  dismantleCN(cn, index) &#123;</span><br><span class="line">    <span class="keyword">const</span> result = pinyin(cn, &#123;<span class="attr">style</span>: pinyin.STYLE_NORMAL&#125;)[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> result) &#123;</span><br><span class="line">      <span class="keyword">if</span> (cnMap[i]) &#123;</span><br><span class="line">        <span class="keyword">if</span> (cnMap[i].indexOf(index) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">          cnMap[i].push(index)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        cnMap[i] = [index]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  formateMapforCN(item, index) &#123;</span><br><span class="line">    <span class="keyword">if</span> (cnMap[item]) &#123;</span><br><span class="line">      <span class="keyword">if</span> (cnMap[item].indexOf(index) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        cnMap[item].push(index)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      cnMap[item] = [index]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fuzzysearch = <span class="keyword">new</span> fuzzySearch()</span><br><span class="line"><span class="keyword">const</span> list = [<span class="string">'杭州'</span>, <span class="string">'上海'</span>, <span class="string">'重庆'</span>, <span class="string">'三亚'</span>]</span><br><span class="line">fuzzysearch.formateCNMap(list)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">结果：</span><br><span class="line">&#123;</span><br><span class="line">  '杭': [ 0 ],</span><br><span class="line">  h: [ 0, 1, 2 ],</span><br><span class="line">  a: [ 0, 1, 3 ],</span><br><span class="line">  n: [ 0, 1, 2, 3 ],</span><br><span class="line">  g: [ 0, 1, 2 ],</span><br><span class="line">  '州': [ 0 ],</span><br><span class="line">  z: [ 0, 2 ],</span><br><span class="line">  o: [ 0, 2 ],</span><br><span class="line">  u: [ 0 ],</span><br><span class="line">  '上': [ 1 ],</span><br><span class="line">  s: [ 1, 3 ],</span><br><span class="line">  '海': [ 1 ],</span><br><span class="line">  i: [ 1, 2 ],</span><br><span class="line">  '重': [ 2 ],</span><br><span class="line">  '庆': [ 2 ],</span><br><span class="line">  q: [ 2 ],</span><br><span class="line">  '三': [ 3 ],</span><br><span class="line">  '亚': [ 3 ],</span><br><span class="line">  y: [ 3 ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="搜索功能"><a href="#搜索功能" class="headerlink" title="搜索功能"></a>搜索功能</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">search(keys) &#123;</span><br><span class="line">    <span class="keyword">let</span> result = []</span><br><span class="line">    <span class="keyword">let</span> first = <span class="literal">true</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.checkKey(keys)) &#123;</span><br><span class="line">      <span class="keyword">return</span> []</span><br><span class="line">    &#125;</span><br><span class="line">		<span class="comment">// 当搜索关键字在字符表中均存在的情况下</span></span><br><span class="line">		<span class="comment">// 第一个关键字匹配的字符表数据放入result中</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">of</span> keys) &#123;</span><br><span class="line">      <span class="keyword">if</span> (cnMap[key] &amp;&amp; first) &#123;</span><br><span class="line">        result = cnMap[key]</span><br><span class="line">        first = <span class="literal">false</span></span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (cnMap[key]) &#123;</span><br><span class="line">				<span class="comment">//  之后的关键字匹配的数据与现有result结果取交集</span></span><br><span class="line">        result = result.filter(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123; <span class="keyword">return</span> cnMap[key].indexOf(v) &gt; <span class="number">-1</span> &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">		<span class="comment">// 获得的结果交集是对应的source list的index数组</span></span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">this</span>.keyToData(result)</span><br><span class="line">    <span class="keyword">return</span> data;</span><br><span class="line">  &#125;</span><br><span class="line">	<span class="comment">// 检查搜索项在字符表中均存在，不存在则没有匹配结果</span></span><br><span class="line">  checkKey(keys) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">of</span> keys) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!cnMap.hasOwnProperty(key)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">	<span class="comment">// 根据index数组取回城市列表数据</span></span><br><span class="line">  keyToData(list) &#123;</span><br><span class="line">    <span class="keyword">let</span> result = []</span><br><span class="line">    list.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">      result.push(sourceLsit[item])</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">	fuzzysearch.search(<span class="string">'a州'</span>) <span class="comment">// [ '杭州' ]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img src="/images/fuzzySearchResult.png" alt="输出结果"></p>
+<h3 id="关键字顺序验证"><a href="#关键字顺序验证" class="headerlink" title="关键字顺序验证"></a>关键字顺序验证</h3><p>to do</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='/statics/chengdu.mp3'></li>
+                        
+                    
+                </ul>
+            
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://res.cloudinary.com/tridiamond/image/upload/v1571154379/TriDiamondLogoCircleLighting_llbad2.png" height=300 width=300></img>
+                    <p>wangjunxin</p>
+                    <span>晚霞消失后是星空，朝霞消失后只剩光天化日下的现实</span>
+                    <dl>
+                        <dd><a href="https://github.com/wangjunxin" target="_blank"><span class=" iconfont icon-github"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">5 <p>Articles</p></a></li>
+                    <li><a href="/categories">0 <p>Categories</p></a></li>
+                    <li><a href="/tags">0 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+                
+                
+                    <div class="box sticky animated fadeInRight faster">
+                        <div id="toc" class="subbox">
+                            <h4>Contents</h4>
+                            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前端城市列表模糊搜索"><span class="toc-number">1.</span> <span class="toc-text">前端城市列表模糊搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#起因"><span class="toc-number">1.0.1.</span> <span class="toc-text">起因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">1.0.2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不足"><span class="toc-number">1.0.3.</span> <span class="toc-text">不足</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成字符表"><span class="toc-number">1.0.4.</span> <span class="toc-text">生成字符表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搜索功能"><span class="toc-number">1.0.5.</span> <span class="toc-text">搜索功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结果"><span class="toc-number">1.0.6.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关键字顺序验证"><span class="toc-number">1.0.7.</span> <span class="toc-text">关键字顺序验证</span></a></li></ol></li></ol></li></ol>
+                        </div>
+                    </div>
+                
+            
+        </div>
+    </div>
+</div>
+
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            wangjunxin
+        </span>
+    </p>
+</footer>
+
+<script src="//cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+    <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+
+
+    <script src="/js/busuanzi.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["晚霞消失后是星空，朝霞消失后只剩光天化日下的现实", ""],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+</html>
